@@ -1,0 +1,108 @@
+
+/* ==========================================================
+   1. THE TROJAN HORSE: REDEFINING THE THEME PALETTE
+   ========================================================== */
+/* We force both Light and Dark modes to use exactly the same variables */
+:root,
+:root[data-theme='dark'],
+:root[data-theme='light'] {
+  color-scheme: light !important;
+  
+  /* CORE BACKGROUNDS - Forced White */
+  --sl-color-bg: #ffffff !important;
+  --sl-color-bg-nav: #ffffff !important;
+  --sl-color-bg-sidebar: #fafafa !important;
+  --sl-color-bg-overlay: #ffffff !important; /* FIXES DROPDOWN AND SEARCH MODAL */
+  
+  /* TYPOGRAPHY - High Contrast Charcoal/Black */
+  --sl-color-text: #111827 !important;
+  --sl-color-white: #000000 !important; /* Invert Starlight's 'White' to Black */
+  --sl-color-black: #ffffff !important; /* Invert Starlight's 'Black' to White */
+  
+  /* GRAYS - For readability and borders */
+  --sl-color-gray-1: #1f2937 !important;
+  --sl-color-gray-2: #374151 !important;
+  --sl-color-gray-3: #4b5563 !important;
+  --sl-color-gray-4: #6b7280 !important;
+  --sl-color-gray-5: #9ca3af !important;
+  --sl-color-gray-6: #f3f4f6 !important;
+  
+  /* BRANDING - Emerald */
+  --sl-color-accent: #059669 !important;
+  --sl-color-accent-low: #ecfdf5 !important;
+  --sl-color-accent-high: #047857 !important;
+  
+  /* BORDERS */
+  --sl-color-hairline: #e5e7eb !important;
+  --sl-color-hairline-shade: #d1d5db !important;
+}
+
+/* Hide the theme toggle completely */
+starlight-theme-select { display: none !important; }
+
+/* ==========================================================
+   2. FIX: EXPLICIT SEARCH BAR & BUTTON VISIBILITY
+   ========================================================== */
+/* Make the Search bar and Hamburger buttons light gray with sharp black icons */
+site-search button,
+starlight-menu-button button,
+mobile-starlight-toc summary {
+  background-color: #f3f4f6 !important;
+  color: #000000 !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+}
+
+site-search button svg,
+starlight-menu-button button svg,
+mobile-starlight-toc summary svg {
+  color: #000000 !important;
+  fill: #000000 !important;
+}
+
+/* Search Modal Text Readability */
+.pagefind-ui__drawer, 
+dialog, 
+.search-results {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+/* ==========================================================
+   3. FIX: BOLD HEADINGS & ACTIVE LINKS
+   ========================================================== */
+h1, h2, h3, h4, h5, h6, .title {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* Mobile dropdown and Sidebar links */
+mobile-starlight-toc a,
+.sidebar-content a {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+}
+
+/* Highlighted Active Page */
+mobile-starlight-toc a[aria-current="page"],
+.sidebar-content a[aria-current="page"] {
+  color: #059669 !important;
+  background-color: #ecfdf5 !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================
+   4. RESTORE CARDS & BADGES
+   ========================================================== */
+.card, section.card {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-left: 4px solid #059669 !important;
+}
+
+.primary, .sl-badge {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}

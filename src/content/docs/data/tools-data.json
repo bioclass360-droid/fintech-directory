@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "tradezella",
+    "title": "TradeZella Review",
+    "category": "journals",
+    "description": "Premium trade journaling and behavioral analytics.",
+    "summary": "TradeZella is the gold standard for traders looking to fix their psychology and find their A+ setups through deep data analysis.",
+    "pros": ["Advanced equity curve tracking", "Automated broker sync", "Behavioral playbook features"],
+    "cons": ["High monthly cost", "Steep learning curve", "Desktop-focused"]
+  },
+  {
+    "slug": "tradingview",
+    "title": "TradingView Review",
+    "category": "charting",
+    "description": "The world's most popular charting and social trading platform.",
+    "summary": "TradingView provides world-class charting with a powerful social community and its own PineScript coding language for custom indicators.",
+    "pros": ["Incredible UI/UX", "Massive community library", "Cloud-based alerts"],
+    "cons": ["Expensive data feeds", "Free version is ad-heavy", "Complex for absolute beginners"]
+  },
+  {
+    "slug": "topstep",
+    "title": "Topstep Review",
+    "category": "prop-firms",
+    "description": "Industry-leading futures funding program.",
+    "summary": "Topstep allows traders to trade with firm capital after passing a rigorous evaluation, specializing in the futures market.",
+    "pros": ["Proven track record", "Fast payouts", "Great education/coaching"],
+    "cons": ["Strict consistency rules", "Futures only", "Evaluation fees add up"]
+  },
+  {
+    "slug": "metatrader-5",
+    "title": "MetaTrader 5 Review",
+    "category": "platforms",
+    "description": "The institutional standard for Forex and CFD trading.",
+    "summary": "MT5 is the updated successor to MT4, offering more timeframes, better order filling, and advanced automated trading capabilities via MQL5.",
+    "pros": ["Universal broker support", "Completely free", "Lightweight on CPU"],
+    "cons": ["Outdated 1990s interface", "Difficult coding language", "Poor mobile experience"]
+  },
+  {
+    "slug": "composer",
+    "title": "Composer Review",
+    "category": "algos",
+    "description": "No-code algorithmic trading and backtesting.",
+    "summary": "Composer uses a 'Lego-block' style visual editor to let you build complex automated strategies without writing a single line of code.",
+    "pros": ["Powerful backtester", "No coding required", "Automated rebalancing"],
+    "cons": ["Limited to ETFs/Stocks", "Subscription required", "No custom indicator support"]
+  }
+]
