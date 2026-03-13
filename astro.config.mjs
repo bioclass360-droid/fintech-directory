@@ -19,6 +19,18 @@ export default defineConfig({
             ],
             sidebar: [
                 {
+                    label: 'Directory',
+                    autogenerate: { directory: 'docs' },
+                },
+                {
+                    label: 'Support',
+                    items: [
+                        { label: 'Contact Us', link: '/contact' },
+                        { label: 'Privacy Policy', link: '/privacy' },
+                        { label: 'Terms of Service', link: '/terms' },
+                    ],
+                },
+                {
                     label: '🚀 Start Here',
                     items: [
                         { label: 'Full Site Directory', link: '/sitemap' },
@@ -52,6 +64,7 @@ export default defineConfig({
                     ],
                 },
             ],
+            
         }),
         mdx(),
         sitemap(),
