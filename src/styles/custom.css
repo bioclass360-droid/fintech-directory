@@ -107,15 +107,22 @@ mobile-starlight-toc a[aria-current="page"],
   font-weight: 700 !important;
 }
 
-/* --- AFFILIATE DISCLOSURE STYLING --- */
-/* This makes the transparency note look like a professional alert box */
+/* Minimalist Disclosure Styling */
 .affiliate-disclosure {
-  font-size: 0.88rem;
-  color: #a0aec0;
-  background-color: #1a202c;
-  padding: 12px 16px;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  border-left: 4px solid #48bb78; /* Green "Trust" bar on the left */
-  line-height: 1.5;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #718096; /* Subtle grey */
+  border-top: 1px solid #2d3748;
+  border-bottom: 1px solid #2d3748;
+  padding: 8px 0;
+  margin: 1rem 0 2rem 0;
+  display: block;
+  line-height: 1.4;
+}
+
+.affiliate-disclosure strong {
+  color: #48bb78; /* Keeps the trust green only on the label */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
 }
