@@ -1,6 +1,6 @@
 ---
 title: Affiliate Links
-description: Master list of fintech partnerships for Prefrontal Profit.
+description: Partnership database for internal management.
 ---
 
-This page stores the master list of fintech partnerships.
+This page is for internal link management. It serves as a placeholder to ensure the site architecture remains stable while we wait for affiliate approvals.
