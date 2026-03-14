@@ -12,6 +12,17 @@ export default defineConfig({
                 src: './src/assets/logo.png',
                 replacesTitle: true,
             },
+            // Verification and SEO Tags
+            head: [
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'impact-site-verification',
+                        value: '38597367-94ce-4a80-8fbb-975cee9bc0b4',
+                        content: '38597367-94ce-4a80-8fbb-975cee9bc0b4'
+                    },
+                },
+            ],
             customCss: ['./src/styles/custom.css'],
             social: [
                 { label: 'YouTube', href: 'https://youtube.com/@prefrontalprofit', icon: 'youtube' },
