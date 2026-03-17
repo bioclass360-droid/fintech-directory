@@ -8,17 +8,11 @@ export default defineConfig({
     integrations: [
         starlight({
             title: 'Prefrontal Profit | Systems Directory',
-            
-            // ADDED: Global Affiliate Banner for TradingView
-            banner: {
-                content: 'New to charting? We recommend <a href="https://in.tradingview.com/?aff_id=164564" target="_blank">TradingView</a>. Sign up to claim a <strong>$15 reward</strong> towards your plan.',
-            },
-
             logo: {
                 src: './src/assets/logo.png',
                 replacesTitle: true,
             },
-            // ADDED: Verification Tag for Impact.com
+            // Verification Tag for Impact.com
             head: [
                 {
                     tag: 'meta',
