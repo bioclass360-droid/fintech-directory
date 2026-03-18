@@ -126,3 +126,23 @@ mobile-starlight-toc a[aria-current="page"],
   letter-spacing: 0.05em;
   font-size: 0.75rem;
 }
+/* Fix Disclosure Overlap */
+.disclosure-banner {
+    max-width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    /* This ensures long text wraps instead of pushing the container out */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: block;
+}
+
+/* Ensure it aligns with the main content width in Starlight */
+@media (min-width: 50rem) {
+    .disclosure-banner {
+        width: 100%;
+    }
+}
