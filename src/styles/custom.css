@@ -126,23 +126,544 @@ mobile-starlight-toc a[aria-current="page"],
   letter-spacing: 0.05em;
   font-size: 0.75rem;
 }
-/* Fix Disclosure Overlap */
-.disclosure-banner {
-    max-width: 100%;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    /* This ensures long text wraps instead of pushing the container out */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    display: block;
+/* ==========================================================
+   PREFRONTAL PROFIT - ENHANCED DESIGN SYSTEM v2.0
+   Added: March 2026
+   Complements existing Starlight overrides above
+   ========================================================== */
+
+/* Import New Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==========================================================
+   ENHANCED COLOR VARIABLES (Supplement existing ones)
+   ========================================================== */
+:root,
+:root[data-theme='dark'],
+:root[data-theme='light'] {
+  /* Keep your existing variables, add these new ones */
+  
+  /* Extended Color Palette for New Components */
+  --pp-primary: #1e40af;
+  --pp-primary-light: #3b82f6;
+  --pp-primary-dark: #1e3a8a;
+  
+  /* Data/Testing Accent Colors */
+  --pp-accent-green: #10b981;
+  --pp-accent-orange: #f59e0b;
+  --pp-accent-red: #ef4444;
+  
+  /* Typography - New font system */
+  --pp-font-display: 'Space Mono', 'Courier New', monospace;
+  --pp-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --pp-font-data: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  
+  /* Spacing */
+  --pp-space-xs: 0.25rem;
+  --pp-space-sm: 0.5rem;
+  --pp-space-md: 1rem;
+  --pp-space-lg: 1.5rem;
+  --pp-space-xl: 2rem;
+  --pp-space-2xl: 3rem;
 }
 
-/* Ensure it aligns with the main content width in Starlight */
-@media (min-width: 50rem) {
-    .disclosure-banner {
-        width: 100%;
-    }
+/* ==========================================================
+   ENHANCED TYPOGRAPHY - Works with Starlight
+   ========================================================== */
+
+/* Apply monospace font to all headings for "data lab" feel */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.content-panel h1,
+.content-panel h2,
+.content-panel h3 {
+  font-family: var(--pp-font-display) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
 }
+
+/* Improve body text readability */
+.sl-markdown-content p,
+.content-panel p {
+  font-family: var(--pp-font-body) !important;
+  line-height: 1.7;
+}
+
+/* Data/code displays */
+.sl-markdown-content code,
+.pp-data-display {
+  font-family: var(--pp-font-data) !important;
+  font-variant-numeric: tabular-nums;
+  background: #f3f4f6 !important;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+/* ==========================================================
+   NEW COMPONENT: Trust Badges
+   ========================================================== */
+
+.pp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: var(--pp-font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+}
+
+.pp-badge-tested {
+  background: var(--pp-accent-green);
+  color: white;
+}
+
+.pp-badge-testing {
+  background: var(--pp-accent-orange);
+  color: white;
+  animation: pp-pulse 2s ease-in-out infinite;
+}
+
+.pp-badge-warning {
+  background: var(--pp-accent-red);
+  color: white;
+}
+
+.pp-badge-neutral {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+/* Pulse animation for "Currently Testing" badges */
+@keyframes pp-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* Pulse dot for live indicators */
+.pp-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+  animation: pp-pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pp-pulse-dot {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+}
+
+/* ==========================================================
+   NEW COMPONENT: Stats Display
+   ========================================================== */
+
+.pp-stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  background: #fafafa;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.pp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  text-align: center;
+  min-width: 120px;
+}
+
+.pp-stat-number {
+  font-family: var(--pp-font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--pp-primary);
+  line-height: 1;
+}
+
+.pp-stat-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   NEW COMPONENT: Enhanced Buttons
+   ========================================================== */
+
+.pp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-family: var(--pp-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.pp-btn-primary {
+  background: var(--pp-primary);
+  color: white !important;
+}
+
+.pp-btn-primary:hover {
+  background: var(--pp-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.25);
+  text-decoration: none !important;
+}
+
+.pp-btn-secondary {
+  background: transparent;
+  color: var(--pp-primary) !important;
+  border: 2px solid var(--pp-primary);
+}
+
+.pp-btn-secondary:hover {
+  background: var(--pp-primary);
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.pp-btn-accent {
+  background: var(--pp-accent-green);
+  color: white !important;
+}
+
+.pp-btn-accent:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+  text-decoration: none !important;
+}
+
+/* Small button variant */
+.pp-btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* ==========================================================
+   NEW COMPONENT: Evidence Bar
+   ========================================================== */
+
+.pp-evidence-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #f3f4f6;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  border: 1px solid #e5e7eb;
+}
+
+.pp-evidence-bar:hover {
+  background: var(--pp-primary);
+  color: white;
+  cursor: help;
+  border-color: var(--pp-primary);
+}
+
+.pp-evidence-bar svg,
+.pp-evidence-bar .icon {
+  font-size: 1.25rem;
+}
+
+/* ==========================================================
+   NEW COMPONENT: Data Preview Boxes
+   ========================================================== */
+
+.pp-data-preview {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.pp-data-point {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pp-data-point:last-child {
+  border-bottom: none;
+}
+
+.pp-data-point-label {
+  font-weight: 500;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.pp-data-point-value {
+  font-family: var(--pp-font-data);
+  font-weight: 700;
+  color: #111827;
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   NEW COMPONENT: Trust Signals Section
+   ========================================================== */
+
+.pp-trust-section {
+  padding: 3rem 0;
+  background: #fafafa;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  margin: 3rem 0;
+}
+
+.pp-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pp-trust-card {
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.pp-trust-card:hover {
+  border-color: var(--pp-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.pp-trust-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pp-trust-card h4 {
+  font-family: var(--pp-font-display) !important;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+  color: #111827 !important;
+}
+
+.pp-trust-card p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.pp-trust-card a {
+  color: var(--pp-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.pp-trust-card a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================
+   NEW COMPONENT: Update Timestamp
+   ========================================================== */
+
+.pp-update-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
+
+.pp-update-badge::before {
+  content: "🔄";
+  font-style: normal;
+}
+
+/* ==========================================================
+   ENHANCED CARD STYLES (supplement your existing .card)
+   ========================================================== */
+
+.pp-platform-card {
+  background: white !important;
+  border: 2px solid #e5e7eb !important;
+  border-left: 4px solid var(--pp-primary) !important;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.pp-platform-card:hover {
+  border-color: var(--pp-primary) !important;
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.12);
+  transform: translateY(-2px);
+}
+
+.pp-platform-card .pp-status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.pp-platform-card h3 {
+  font-family: var(--pp-font-display) !important;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 768px) {
+  .pp-stats-bar {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .pp-stat {
+    min-width: 100px;
+  }
+  
+  .pp-stat-number {
+    font-size: 2rem;
+  }
+  
+  .pp-trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .pp-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .pp-data-preview {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pp-stats-bar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .pp-stat {
+    width: 100%;
+  }
+  
+  .pp-badge {
+    font-size: 0.7rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* ==========================================================
+   UTILITY CLASSES
+   ========================================================== */
+
+/* Text Colors */
+.pp-text-primary { color: #111827 !important; }
+.pp-text-secondary { color: #4b5563 !important; }
+.pp-text-muted { color: #9ca3af !important; }
+.pp-text-accent { color: var(--pp-accent-green) !important; }
+.pp-text-blue { color: var(--pp-primary) !important; }
+
+/* Spacing Utilities */
+.pp-mt-1 { margin-top: var(--pp-space-sm); }
+.pp-mt-2 { margin-top: var(--pp-space-md); }
+.pp-mt-3 { margin-top: var(--pp-space-lg); }
+.pp-mt-4 { margin-top: var(--pp-space-xl); }
+
+.pp-mb-1 { margin-bottom: var(--pp-space-sm); }
+.pp-mb-2 { margin-bottom: var(--pp-space-md); }
+.pp-mb-3 { margin-bottom: var(--pp-space-lg); }
+.pp-mb-4 { margin-bottom: var(--pp-space-xl); }
+
+.pp-py-1 { padding-top: var(--pp-space-sm); padding-bottom: var(--pp-space-sm); }
+.pp-py-2 { padding-top: var(--pp-space-md); padding-bottom: var(--pp-space-md); }
+.pp-py-3 { padding-top: var(--pp-space-lg); padding-bottom: var(--pp-space-lg); }
+
+/* Display Utilities */
+.pp-flex { display: flex; }
+.pp-flex-col { flex-direction: column; }
+.pp-items-center { align-items: center; }
+.pp-justify-center { justify-content: center; }
+.pp-gap-1 { gap: var(--pp-space-sm); }
+.pp-gap-2 { gap: var(--pp-space-md); }
+.pp-gap-3 { gap: var(--pp-space-lg); }
+
+/* Border Utilities */
+.pp-border { border: 1px solid #e5e7eb; }
+.pp-border-2 { border: 2px solid #e5e7eb; }
+.pp-rounded { border-radius: 0.5rem; }
+.pp-rounded-lg { border-radius: 0.75rem; }
+
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+
+/* Fade in on scroll */
+.pp-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.pp-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover lift */
+.pp-hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pp-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================
+   END PREFRONTAL PROFIT ENHANCED DESIGN SYSTEM
+   ========================================================== */
