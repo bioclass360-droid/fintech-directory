@@ -8,6 +8,9 @@ export default defineConfig({
     integrations: [
         starlight({
             title: 'Prefrontal Profit | Systems Directory',
+            components: {
+                PageFrame: './src/components/overrides/PageFrame.astro',
+            },
             logo: {
                 src: './src/assets/logo.png',
                 replacesTitle: true,

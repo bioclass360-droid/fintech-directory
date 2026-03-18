@@ -1,0 +1,27 @@
+---
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+---
+
+<Default {...Astro.props}>
+  <slot name="header" slot="header" />
+  <slot name="sidebar" slot="sidebar" />
+
+  <div class="affiliate-disclosure" role="note" aria-label="Affiliate disclosure">
+    <strong>Disclosure:</strong> Prefrontal Profit earns commissions from some links on this page.
+    Our reviews are independent and based on our own testing methodology.
+  </div>
+
+  <slot />
+</Default>
+
+<style>
+  .affiliate-disclosure {
+    font-size: 0.78rem;
+    color: var(--sl-color-text-accent);
+    background: var(--sl-color-bg-nav);
+    border-left: 3px solid var(--sl-color-accent);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 4px 4px 0;
+  }
+</style>
