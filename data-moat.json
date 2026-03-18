@@ -1,0 +1,111 @@
+{
+    "brokers-india":  {
+                          "zerodha.mdx":  {
+                                              "latLab":  "Execution Speed",
+                                              "rel":  "7.0",
+                                              "name":  "Zerodha",
+                                              "relLab":  "System Uptime",
+                                              "lat":  "8.0"
+                                          },
+                          "paytm-money.mdx":  {
+                                                  "latLab":  "Execution Speed",
+                                                  "rel":  "5.0",
+                                                  "name":  "Paytm Money",
+                                                  "relLab":  "System Uptime",
+                                                  "lat":  "5.0"
+                                              },
+                          "dhan.mdx":  {
+                                           "latLab":  "Execution Speed",
+                                           "rel":  "9.0",
+                                           "name":  "Dhan",
+                                           "relLab":  "System Uptime",
+                                           "lat":  "10.0"
+                                       },
+                          "5paisa.mdx":  {
+                                             "latLab":  "Execution Speed",
+                                             "rel":  "5.0",
+                                             "name":  "5paisa",
+                                             "relLab":  "System Uptime",
+                                             "lat":  "6.0"
+                                         },
+                          "fyers.mdx":  {
+                                            "latLab":  "Execution Speed",
+                                            "rel":  "9.0",
+                                            "name":  "Fyers",
+                                            "relLab":  "System Uptime",
+                                            "lat":  "7.0"
+                                        },
+                          "upstox.mdx":  {
+                                             "latLab":  "Execution Speed",
+                                             "rel":  "6.0",
+                                             "name":  "Upstox",
+                                             "relLab":  "System Uptime",
+                                             "lat":  "9.0"
+                                         },
+                          "kotak-securities.mdx":  {
+                                                       "latLab":  "Execution Speed",
+                                                       "rel":  "5.0",
+                                                       "name":  "Kotak Securities",
+                                                       "relLab":  "System Uptime",
+                                                       "lat":  "9.0"
+                                                   },
+                          "icici-direct.mdx":  {
+                                                   "latLab":  "Execution Speed",
+                                                   "rel":  "6.0",
+                                                   "name":  "ICICI Direct",
+                                                   "relLab":  "System Uptime",
+                                                   "lat":  "5.0"
+                                               },
+                          "groww.mdx":  {
+                                            "latLab":  "Execution Speed",
+                                            "rel":  "6.0",
+                                            "name":  "Groww",
+                                            "relLab":  "System Uptime",
+                                            "lat":  "7.0"
+                                        },
+                          "angel-one.mdx":  {
+                                                "latLab":  "Execution Speed",
+                                                "rel":  "6.0",
+                                                "name":  "Angel One",
+                                                "relLab":  "System Uptime",
+                                                "lat":  "6.0"
+                                            }
+                      },
+    "prop-firms":  {
+                       "myfundedfutures.mdx":  {
+                                                   "latLab":  "UI Latency",
+                                                   "rel":  "9.4",
+                                                   "name":  "MyFundedFutures",
+                                                   "relLab":  "Payout Reliability",
+                                                   "lat":  "9.6"
+                                               },
+                       "e8-markets.mdx":  {
+                                              "latLab":  "UI Latency",
+                                              "rel":  "9.3",
+                                              "name":  "E8 Markets",
+                                              "relLab":  "Payout Reliability",
+                                              "lat":  "9.2"
+                                          },
+                       "topstep.mdx":  {
+                                           "latLab":  "UI Latency",
+                                           "rel":  "9.8",
+                                           "name":  "Topstep",
+                                           "relLab":  "Payout Reliability",
+                                           "lat":  "9.7"
+                                       },
+                       "ftmo.mdx":  {
+                                        "latLab":  "UI Latency",
+                                        "rel":  "9.9",
+                                        "name":  "FTMO",
+                                        "relLab":  "Payout Reliability",
+                                        "lat":  "9.5"
+                                    },
+                       "the-5ers.mdx":  {
+                                            "latLab":  "UI Latency",
+                                            "rel":  "9.6",
+                                            "name":  "The 5ers",
+                                            "relLab":  "Payout Reliability",
+                                            "lat":  "9.0"
+                                        }
+                   }
+}
