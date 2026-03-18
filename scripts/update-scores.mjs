@@ -6,9 +6,15 @@ const BASE_PATH = './src/content/docs';
 
 console.log("🚀 Starting Universal Master Sync...");
 
-// Helper to find the leaderboard file regardless of "indian-brokers" vs "brokers-india"
+// Helper to find the leaderboard file even if names are swapped
 const findLeaderboard = (category) => {
-  const possibleNames = [`best-${category}.mdx`, `best-indian-brokers.mdx`, `${category}.mdx` ];
+  const possibleNames = [
+    `best-${category}.mdx`, 
+    `best-indian-brokers.mdx`, 
+    `best-brokers-india.mdx`,
+    `best-prop-firms.mdx`,
+    `${category}.mdx`
+  ];
   for (const name of possibleNames) {
     const fullPath = path.join(BASE_PATH, name);
     if (fs.existsSync(fullPath)) return fullPath;
@@ -36,7 +42,7 @@ for (const [category, files] of Object.entries(DATA)) {
     console.log(`✅ Individual: ${category}/${fileName}`);
   }
 
-  // 2. Update the Master Leaderboard
+  // 2. Update the Master Leaderboard (The list page)
   if (leaderboardPath) {
     let lbContent = fs.readFileSync(leaderboardPath, 'utf8');
     
