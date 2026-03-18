@@ -4,27 +4,14 @@ import path from 'path';
 const DATA = JSON.parse(fs.readFileSync('./data-moat.json', 'utf8'));
 const BASE_PATH = './src/content/docs';
 
-console.log("🚀 Starting Universal Master Sync...");
-
-// Helper to find the leaderboard file even if names are swapped
-const findLeaderboard = (category) => {
-  const possibleNames = [
-    `best-${category}.mdx`, 
-    `best-indian-brokers.mdx`, 
-    `best-brokers-india.mdx`,
-    `best-prop-firms.mdx`,
-    `${category}.mdx`
-  ];
-  for (const name of possibleNames) {
-    const fullPath = path.join(BASE_PATH, name);
-    if (fs.existsSync(fullPath)) return fullPath;
-  }
-  return null;
-};
+console.log("🚀 Starting Final Master Sync...");
 
 for (const [category, files] of Object.entries(DATA)) {
   const dirPath = path.join(BASE_PATH, category);
-  const leaderboardPath = findLeaderboard(category);
+  
+  // FIX: Hardcoded mapping to ensure we hit the right leaderboard file
+  let leaderboardName = `best-${category}.mdx`;
+  const leaderboardPath = path.join(BASE_PATH, leaderboardName);
 
   // 1. Update Individual Review Pages
   for (const [fileName, scores] of Object.entries(files)) {
@@ -39,21 +26,23 @@ for (const [category, files] of Object.entries(DATA)) {
     content = content.replace(checkRegex, `<Card title="${scores.rel} / 10" icon="approve-check">\n    **${scores.relLab}** Verified Reliability Score.\n  </Card>`);
 
     fs.writeFileSync(filePath, content, 'utf8');
-    console.log(`✅ Individual: ${category}/${fileName}`);
+    console.log(`✅ Updated Review: ${category}/${fileName}`);
   }
 
-  // 2. Update the Master Leaderboard (The list page)
-  if (leaderboardPath) {
+  // 2. Update the Master Leaderboard (The List Page)
+  if (fs.existsSync(leaderboardPath)) {
     let lbContent = fs.readFileSync(leaderboardPath, 'utf8');
     
     for (const [fileName, scores] of Object.entries(files)) {
-      // Find section by Name and replace the Table rows inside it
+      // Find the specific section for this firm (from ### Name until the next ---)
       const sectionRegex = new RegExp(`### .*?${scores.name}[\\s\\S]*?---`, 'g');
       
       lbContent = lbContent.replace(sectionRegex, (match) => {
+        // Find the Latency row (rocket icon) and replace the whole line
         let updated = match.replace(/\|.*Icon name="rocket".*\|.*\|/g, 
           `| <Icon name="rocket" /> **${scores.latLab}** | ${scores.lat}/10 |`);
         
+        // Find the Reliability row (check icon) and replace the whole line
         updated = updated.replace(/\|.*Icon name="approve-check".*\|.*\|/g, 
           `| <Icon name="approve-check" /> **${scores.relLab}** | ${scores.rel}/10 |`);
         
@@ -62,9 +51,9 @@ for (const [category, files] of Object.entries(DATA)) {
     }
 
     fs.writeFileSync(leaderboardPath, lbContent, 'utf8');
-    console.log(`🏆 Leaderboard Updated: ${path.basename(leaderboardPath)}`);
+    console.log(`🏆 Updated Leaderboard: ${leaderboardName}`);
   } else {
-    console.log(`❌ No leaderboard file found for category: ${category}`);
+    console.log(`❌ Leaderboard Missing: ${leaderboardPath}`);
   }
 }
 
