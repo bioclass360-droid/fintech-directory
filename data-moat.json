@@ -1,111 +1,66 @@
 {
     "brokers-india":  {
-                          "zerodha.mdx":  {
-                                              "latLab":  "Execution Speed",
-                                              "rel":  "7.0",
-                                              "name":  "Zerodha",
-                                              "relLab":  "System Uptime",
-                                              "lat":  "8.0"
-                                          },
-                          "paytm-money.mdx":  {
-                                                  "latLab":  "Execution Speed",
-                                                  "rel":  "5.0",
-                                                  "name":  "Paytm Money",
-                                                  "relLab":  "System Uptime",
-                                                  "lat":  "5.0"
-                                              },
-                          "dhan.mdx":  {
-                                           "latLab":  "Execution Speed",
-                                           "rel":  "9.0",
-                                           "name":  "Dhan",
-                                           "relLab":  "System Uptime",
-                                           "lat":  "10.0"
-                                       },
-                          "5paisa.mdx":  {
-                                             "latLab":  "Execution Speed",
-                                             "rel":  "5.0",
-                                             "name":  "5paisa",
-                                             "relLab":  "System Uptime",
-                                             "lat":  "6.0"
-                                         },
-                          "fyers.mdx":  {
-                                            "latLab":  "Execution Speed",
-                                            "rel":  "9.0",
-                                            "name":  "Fyers",
-                                            "relLab":  "System Uptime",
-                                            "lat":  "7.0"
-                                        },
-                          "upstox.mdx":  {
-                                             "latLab":  "Execution Speed",
-                                             "rel":  "6.0",
-                                             "name":  "Upstox",
-                                             "relLab":  "System Uptime",
-                                             "lat":  "9.0"
-                                         },
-                          "kotak-securities.mdx":  {
-                                                       "latLab":  "Execution Speed",
-                                                       "rel":  "5.0",
-                                                       "name":  "Kotak Securities",
-                                                       "relLab":  "System Uptime",
-                                                       "lat":  "9.0"
-                                                   },
-                          "icici-direct.mdx":  {
-                                                   "latLab":  "Execution Speed",
-                                                   "rel":  "6.0",
-                                                   "name":  "ICICI Direct",
-                                                   "relLab":  "System Uptime",
-                                                   "lat":  "5.0"
-                                               },
-                          "groww.mdx":  {
-                                            "latLab":  "Execution Speed",
-                                            "rel":  "6.0",
-                                            "name":  "Groww",
-                                            "relLab":  "System Uptime",
-                                            "lat":  "7.0"
-                                        },
                           "angel-one.mdx":  {
+                                                "lat":  "6.0",
+                                                "ideal":  "Mobile Traders",
                                                 "latLab":  "Execution Speed",
                                                 "rel":  "6.0",
                                                 "name":  "Angel One",
+                                                "summary":  "A full-service discount broker with a strong mobile app ecosystem.",
                                                 "relLab":  "System Uptime",
-                                                "lat":  "6.0"
-                                            }
+                                                "pricing":  "₹0 Delivery / ₹20 Intraday"
+                                            },
+                          "zerodha.mdx":  {
+                                              "lat":  "8.0",
+                                              "ideal":  "Indian Retail Traders",
+                                              "latLab":  "Execution Speed",
+                                              "rel":  "7.0",
+                                              "name":  "Zerodha",
+                                              "summary":  "The pioneer of discount brokerage in India with the robust Kite platform.",
+                                              "relLab":  "System Uptime",
+                                              "pricing":  "₹0 Delivery / ₹20 Intraday"
+                                          },
+                          "dhan.mdx":  {
+                                           "lat":  "10.0",
+                                           "ideal":  "Active Options Traders",
+                                           "latLab":  "Execution Speed",
+                                           "rel":  "9.0",
+                                           "name":  "Dhan",
+                                           "summary":  "Specialized features for F\u0026O traders with TradingView integration.",
+                                           "relLab":  "System Uptime",
+                                           "pricing":  "₹0 Delivery / ₹20 Intraday"
+                                       },
+                          "fyers.mdx":  {
+                                            "lat":  "7.0",
+                                            "ideal":  "Technical Analysts",
+                                            "latLab":  "Execution Speed",
+                                            "rel":  "9.0",
+                                            "name":  "Fyers",
+                                            "summary":  "Focus on technical analysis and direct-from-chart trading.",
+                                            "relLab":  "System Uptime",
+                                            "pricing":  "₹0 Delivery / ₹20 Intraday"
+                                        }
                       },
     "prop-firms":  {
-                       "myfundedfutures.mdx":  {
-                                                   "latLab":  "UI Latency",
-                                                   "rel":  "9.4",
-                                                   "name":  "MyFundedFutures",
-                                                   "relLab":  "Payout Reliability",
-                                                   "lat":  "9.6"
-                                               },
-                       "e8-markets.mdx":  {
-                                              "latLab":  "UI Latency",
-                                              "rel":  "9.3",
-                                              "name":  "E8 Markets",
-                                              "relLab":  "Payout Reliability",
-                                              "lat":  "9.2"
-                                          },
                        "topstep.mdx":  {
+                                           "lat":  "9.7",
+                                           "ideal":  "Futures Scalpers",
                                            "latLab":  "UI Latency",
                                            "rel":  "9.8",
                                            "name":  "Topstep",
+                                           "summary":  "Best-in-class for Futures traders with a legendary reputation.",
                                            "relLab":  "Payout Reliability",
-                                           "lat":  "9.7"
+                                           "pricing":  "+ Monthly"
                                        },
                        "ftmo.mdx":  {
+                                        "lat":  "9.5",
+                                        "ideal":  "Serious Systems Traders",
                                         "latLab":  "UI Latency",
                                         "rel":  "9.9",
                                         "name":  "FTMO",
+                                        "summary":  "The gold standard of the industry with institutional-grade scaling.",
                                         "relLab":  "Payout Reliability",
-                                        "lat":  "9.5"
-                                    },
-                       "the-5ers.mdx":  {
-                                            "latLab":  "UI Latency",
-                                            "rel":  "9.6",
-                                            "name":  "The 5ers",
-                                            "relLab":  "Payout Reliability",
-                                            "lat":  "9.0"
-                                        }
+                                        "pricing":  "+ Refundable"
+                                    }
                    }
 }
