@@ -33,8 +33,8 @@ import Default from '@astrojs/starlight/components/PageFrame.astro';
     overflow-wrap: break-word !important;
     box-sizing: border-box !important;
     
-    /* Force using viewport width minus sidebars */
-    max-width: calc(100vw - 600px) !important;
+    /* Give more space - adjust the 500px value to taste */
+    max-width: calc(100vw - 500px) !important;
   }
 
   /* Mobile - no sidebars */
@@ -47,7 +47,7 @@ import Default from '@astrojs/starlight/components/PageFrame.astro';
   /* Tablet - left sidebar only */
   @media (min-width: 50rem) and (max-width: 72rem) {
     .affiliate-disclosure {
-      max-width: calc(100vw - 350px) !important;
+      max-width: calc(100vw - 320px) !important;
     }
   }
 
