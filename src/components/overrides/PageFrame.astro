@@ -5,56 +5,5 @@ import Default from '@astrojs/starlight/components/PageFrame.astro';
 <Default {...Astro.props}>
   <slot name="header" slot="header" />
   <slot name="sidebar" slot="sidebar" />
-
-  <div 
-    class="affiliate-disclosure" 
-    role="note" 
-    aria-label="Affiliate disclosure"
-  >
-    <strong>DISCLOSURE:</strong> Prefrontal Profit earns commissions from some links on this page.
-    Our reviews are independent and based on our own testing methodology.
-  </div>
-
   <slot />
 </Default>
-
-<style is:global>
-  .affiliate-disclosure {
-    font-size: 0.8rem;
-    font-style: italic;
-    color: #718096 !important;
-    border-top: 1px solid #2d3748 !important;
-    border-bottom: 1px solid #2d3748 !important;
-    padding: 8px 12px !important;
-    margin: 1rem 0 2rem 0 !important;
-    display: block !important;
-    line-height: 1.4 !important;
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    box-sizing: border-box !important;
-    
-    /* Give more space - adjust the 500px value to taste */
-    max-width: calc(100vw - 500px) !important;
-  }
-
-  /* Mobile - no sidebars */
-  @media (max-width: 50rem) {
-    .affiliate-disclosure {
-      max-width: calc(100vw - 2rem) !important;
-    }
-  }
-
-  /* Tablet - left sidebar only */
-  @media (min-width: 50rem) and (max-width: 72rem) {
-    .affiliate-disclosure {
-      max-width: calc(100vw - 320px) !important;
-    }
-  }
-
-  .affiliate-disclosure strong {
-    color: #48bb78 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    font-size: 0.75rem !important;
-  }
-</style>
