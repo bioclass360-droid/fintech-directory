@@ -7,12 +7,13 @@ export default defineConfig({
     site: 'https://prefrontalprofit.com', 
     integrations: [
         starlight({
-            title: 'Prefrontal Profit | Systems Directory',
+            title: 'Prefrontal Profit',
             components: {
                 PageFrame: './src/components/overrides/PageFrame.astro',
             },
             logo: {
                 src: './src/assets/logo.png',
+                alt: 'Prefrontal Profit Logo',
                 replacesTitle: true,
             },
             // Verification Tag for Impact.com

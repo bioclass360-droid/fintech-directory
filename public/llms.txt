@@ -1,0 +1,4 @@
+# Prefrontal Profit
+> Technical directory and infrastructure auditor for FinTech platforms, Prop Firms, and Crypto Exchanges.
+
+We evaluate trading tools based on execution latency, system architecture, and cognitive load using our proprietary Attention Protocol.
