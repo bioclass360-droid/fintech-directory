@@ -9,9 +9,17 @@ sidebar:
 ---
 
 import { Badge, Card, CardGrid, LinkButton, Icon } from '@astrojs/starlight/components';
+import ReviewSchema from '../../../components/ReviewSchema.astro';
 import Disclosure from '../../../components/Disclosure.astro';
 
 <Disclosure />
+
+<ReviewSchema 
+  name="Bybit"
+  rating={4.4}
+  description="Bybit review - tested and analyzed by Prefrontal Profit"
+  category="Exchange"
+/>
 
 
 

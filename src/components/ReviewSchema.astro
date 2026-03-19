@@ -1,0 +1,63 @@
+---
+// ReviewSchema.astro - Structured data for review pages
+// Helps Google display rich snippets with star ratings
+
+const { 
+  name, 
+  rating, 
+  description, 
+  category = 'SoftwareApplication',
+  price,
+  datePublished,
+  dateModified 
+} = Astro.props;
+
+// Map categories to schema types
+const schemaTypeMap = {
+  'PropFirm': 'FinancialProduct',
+  'Broker': 'FinancialProduct', 
+  'Exchange': 'FinancialProduct',
+  'Journal': 'SoftwareApplication',
+  'AlgoTradingPlatform': 'SoftwareApplication'
+};
+
+const schemaType = schemaTypeMap[category] || 'SoftwareApplication';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": schemaType,
+    "name": name,
+    "description": description,
+    ...(price && { "offers": {
+      "@type": "Offer",
+      "price": price,
+      "priceCurrency": "USD"
+    }})
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": rating.toString(),
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Prefrontal Profit",
+    "url": "https://prefrontalprofit.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Prefrontal Profit",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://prefrontalprofit.com/logo.png"
+    }
+  },
+  ...(datePublished && { "datePublished": datePublished }),
+  ...(dateModified && { "dateModified": dateModified })
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

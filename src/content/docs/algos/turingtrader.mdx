@@ -9,9 +9,17 @@ sidebar:
 ---
 
 import { Badge, Card, CardGrid, LinkButton, Icon } from '@astrojs/starlight/components';
+import ReviewSchema from '../../../components/ReviewSchema.astro';
 import Disclosure from '../../../components/Disclosure.astro';
 
 <Disclosure />
+
+<ReviewSchema 
+  name="Turingtrader"
+  rating={4.1}
+  description="Turingtrader review - tested and analyzed by Prefrontal Profit"
+  category="AlgoTradingPlatform"
+/>
 
 
 

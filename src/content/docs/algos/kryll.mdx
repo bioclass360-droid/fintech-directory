@@ -8,9 +8,17 @@ sidebar:
 ---
 
 import { Badge, Card, LinkButton, Icon } from '@astrojs/starlight/components';
+import ReviewSchema from '../../../components/ReviewSchema.astro';
 import Disclosure from '../../../components/Disclosure.astro';
 
 <Disclosure />
+
+<ReviewSchema 
+  name="Kryll"
+  rating={4.1}
+  description="Kryll review - tested and analyzed by Prefrontal Profit"
+  category="AlgoTradingPlatform"
+/>
 
 # Kryll <Badge text="Verified Review" variant="success" />
 

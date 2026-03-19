@@ -8,9 +8,17 @@ sidebar:
 ---
 
 import { Badge, Card, LinkButton, Icon } from '@astrojs/starlight/components';
+import ReviewSchema from '../../../components/ReviewSchema.astro';
 import Disclosure from '../../../components/Disclosure.astro';
 
 <Disclosure />
+
+<ReviewSchema 
+  name="Goat Funded"
+  rating={4.3}
+  description="Goat Funded review - tested and analyzed by Prefrontal Profit"
+  category="PropFirm"
+/>
 
 # Goat Funded <Badge text="Verified Review" variant="success" />
 

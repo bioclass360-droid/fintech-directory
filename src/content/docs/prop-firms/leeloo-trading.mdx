@@ -4,9 +4,17 @@ description: "Leeloo Trading prop firm review"
 ---
 
 import { Badge, Card, CardGrid } from '@astrojs/starlight/components';
+import ReviewSchema from '../../../components/ReviewSchema.astro';
 import Disclosure from '../../../components/Disclosure.astro';
 
 <Disclosure />
+
+<ReviewSchema 
+  name="Leeloo Trading"
+  rating={4.3}
+  description="Leeloo Trading review - tested and analyzed by Prefrontal Profit"
+  category="PropFirm"
+/>
 
 # Leeloo Trading
 
