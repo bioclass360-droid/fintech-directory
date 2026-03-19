@@ -32,14 +32,14 @@ export default defineConfig({
             ],
             sidebar: [
                 {
-                    label: 'ðŸš€ Start Here',
+                    label: '🚀 Start Here',
                     items: [
                         { label: 'Full Site Directory', link: '/sitemap' },
                         { label: 'Systems Glossary', link: '/glossary' }, 
                     ],
                 },
                 {
-                    label: 'ðŸŽ¯ Best-Of Rankings (2026)',
+                    label: '🎯 Best-Of Rankings (2026)',
                     items: [
                         { label: 'Best Prop Firms', link: '/best-prop-firms' },
                         { label: 'Best Indian Brokers', link: '/best-brokers-india' },
@@ -49,11 +49,11 @@ export default defineConfig({
                     ],
                 },
                 {
-                    label: 'âš”ï¸ Versus Battles',
+                    label: '⚔️ Versus Battles',
                     autogenerate: { directory: 'comparisons' },
                 },
                 {
-                    label: 'ðŸ“‘ Technical Reviews',
+                    label: '📑 Technical Reviews',
                     items: [
                         { label: 'Prop Firms', autogenerate: { directory: 'prop-firms' } },
                         { label: 'Indian Brokers', autogenerate: { directory: 'brokers-india' } },
@@ -80,4 +80,3 @@ export default defineConfig({
         sitemap(),
     ],
 });
-
