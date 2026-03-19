@@ -68,7 +68,6 @@ export default defineConfig({
                     label: 'Support & Legal',
                     items: [
                         { label: 'Transparency', link: '/transparency' },
-                        { label: 'Methodology', link: '/methodology' },
                         { label: 'Contact Us', link: '/contact' },
                         { label: 'Privacy Policy', link: '/privacy' },
                         { label: 'Terms of Service', link: '/terms' },
@@ -80,4 +79,3 @@ export default defineConfig({
         sitemap(),
     ],
 });
-
