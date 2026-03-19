@@ -6,33 +6,19 @@ import Default from '@astrojs/starlight/components/PageFrame.astro';
   <slot name="header" slot="header" />
   <slot name="sidebar" slot="sidebar" />
 
-  <Fragment>
-    <div 
-      class="affiliate-disclosure" 
-      role="note" 
-      aria-label="Affiliate disclosure"
-    >
-      <strong>DISCLOSURE:</strong> Prefrontal Profit earns commissions from some links on this page.
-      Our reviews are independent and based on our own testing methodology.
-    </div>
+  <div 
+    class="affiliate-disclosure" 
+    role="note" 
+    aria-label="Affiliate disclosure"
+  >
+    <strong>DISCLOSURE:</strong> Prefrontal Profit earns commissions from some links on this page.
+    Our reviews are independent and based on our own testing methodology.
+  </div>
 
-    <slot />
-  </Fragment>
+  <slot />
 </Default>
 
 <style is:global>
-  /* Target the main content frame to prevent overflow */
-  .main-frame {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-
-  /* Force all children of main-frame to respect bounds */
-  .main-frame > * {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
   .affiliate-disclosure {
     font-size: 0.8rem;
     font-style: italic;
@@ -43,11 +29,26 @@ import Default from '@astrojs/starlight/components/PageFrame.astro';
     margin: 1rem 0 2rem 0 !important;
     display: block !important;
     line-height: 1.4 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+    
+    /* Force using viewport width minus sidebars */
+    max-width: calc(100vw - 600px) !important;
+  }
+
+  /* Mobile - no sidebars */
+  @media (max-width: 50rem) {
+    .affiliate-disclosure {
+      max-width: calc(100vw - 2rem) !important;
+    }
+  }
+
+  /* Tablet - left sidebar only */
+  @media (min-width: 50rem) and (max-width: 72rem) {
+    .affiliate-disclosure {
+      max-width: calc(100vw - 350px) !important;
+    }
   }
 
   .affiliate-disclosure strong {
@@ -55,12 +56,5 @@ import Default from '@astrojs/starlight/components/PageFrame.astro';
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
     font-size: 0.75rem !important;
-  }
-
-  /* Specific fix for pages with right sidebar */
-  @media (min-width: 72rem) {
-    .main-frame .affiliate-disclosure {
-      padding-right: 1rem !important;
-    }
   }
 </style>
