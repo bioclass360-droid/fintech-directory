@@ -1,0 +1,160 @@
+---
+// TestingProof.astro - Testing evidence indicators for reviews
+// Shows transparent testing metrics to build trust
+
+interface Props {
+  testedDate?: string;
+  testDuration?: string;
+  environment?: string;
+  dataPoints?: string;
+  nextRetest?: string;
+}
+
+const { 
+  testedDate = "March 2026",
+  testDuration = "30 days",
+  environment = "Live account ($10K)",
+  dataPoints = "500+",
+  nextRetest = "June 2026"
+} = Astro.props;
+---
+
+<div class="testing-proof">
+  <div class="testing-proof-header">
+    <span class="testing-icon">🔬</span>
+    <h3>Testing Evidence</h3>
+  </div>
+  
+  <div class="testing-proof-grid">
+    <div class="proof-item">
+      <span class="proof-icon">📅</span>
+      <div class="proof-content">
+        <span class="proof-label">Tested On</span>
+        <span class="proof-value">{testedDate}</span>
+      </div>
+    </div>
+    
+    <div class="proof-item">
+      <span class="proof-icon">⏱️</span>
+      <div class="proof-content">
+        <span class="proof-label">Test Duration</span>
+        <span class="proof-value">{testDuration}</span>
+      </div>
+    </div>
+    
+    <div class="proof-item">
+      <span class="proof-icon">💰</span>
+      <div class="proof-content">
+        <span class="proof-label">Test Environment</span>
+        <span class="proof-value">{environment}</span>
+      </div>
+    </div>
+    
+    <div class="proof-item">
+      <span class="proof-icon">📊</span>
+      <div class="proof-content">
+        <span class="proof-label">Data Points Collected</span>
+        <span class="proof-value">{dataPoints}</span>
+      </div>
+    </div>
+    
+    <div class="proof-item">
+      <span class="proof-icon">🔄</span>
+      <div class="proof-content">
+        <span class="proof-label">Next Retest</span>
+        <span class="proof-value">{nextRetest}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .testing-proof {
+    background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+    border: 2px solid #10b981;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.1);
+  }
+
+  .testing-proof-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #10b981;
+  }
+
+  .testing-icon {
+    font-size: 1.75rem;
+  }
+
+  .testing-proof-header h3 {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #065f46;
+    margin: 0;
+  }
+
+  .testing-proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .proof-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #d1fae5;
+    transition: all 0.2s ease;
+  }
+
+  .proof-item:hover {
+    border-color: #10b981;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .proof-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .proof-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .proof-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .proof-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #065f46;
+    font-family: 'Space Mono', monospace;
+  }
+
+  @media (max-width: 640px) {
+    .testing-proof-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .testing-proof {
+      padding: 1rem;
+    }
+  }
+</style>
