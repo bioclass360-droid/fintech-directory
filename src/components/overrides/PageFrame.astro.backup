@@ -1,0 +1,47 @@
+---
+import Default from '@astrojs/starlight/components/PageFrame.astro';
+---
+
+<Default {...Astro.props}>
+  <slot name="header" slot="header" />
+  <slot name="sidebar" slot="sidebar" />
+
+  <div class="affiliate-disclosure" role="note" aria-label="Affiliate disclosure">
+    <strong>DISCLOSURE:</strong> Prefrontal Profit earns commissions from some links on this page.
+    Our reviews are independent and based on our own testing methodology.
+  </div>
+
+  <slot />
+</Default>
+
+<style is:global>
+  .affiliate-disclosure {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #718096;
+    border-top: 1px solid #2d3748;
+    border-bottom: 1px solid #2d3748;
+    padding: 8px 12px;
+    margin: 1rem 0 2rem 0;
+    display: block;
+    line-height: 1.4;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .affiliate-disclosure strong {
+    color: #48bb78;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+  }
+
+  /* Responsive fixes for sidebar layout */
+  @media (min-width: 72rem) {
+    .affiliate-disclosure {
+      max-width: calc(100% - 2rem);
+    }
+  }
+</style>
