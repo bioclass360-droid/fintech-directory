@@ -1,4 +1,3 @@
-
 /* ==========================================================
    1. THE TROJAN HORSE: REDEFINING THE THEME PALETTE
    ========================================================== */
@@ -114,10 +113,13 @@ mobile-starlight-toc a[aria-current="page"],
   color: #718096; /* Subtle grey */
   border-top: 1px solid #2d3748;
   border-bottom: 1px solid #2d3748;
-  padding: 8px 0;
+  padding: 8px 12px;
   margin: 1rem 0 2rem 0;
   display: block;
   line-height: 1.4;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
 }
 
 .affiliate-disclosure strong {
